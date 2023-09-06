@@ -13,12 +13,7 @@ async function start_bot() {
 
         let info = await extract(pool);
 
-        if (info.msg === "Oi") {
-            
-            await waSocket.sendMessage(info.id, { text: "ooi"});
-            
-        } 
-        
+       
         else if (info.msg.startsWith("#") && IaN(info.msg.replace("#", "")) === true) {
             pesquisaScherer(info.msg.replace("#", "")).then(async (pesquisa) => {
                 console.log(pesquisa)

@@ -56,8 +56,8 @@ async function pesquisaScherer(scherer) {
 
 async function extract(pool) {
     let info = {};
-    info.id = pool.messages[0].key.remoteJid;
-    info.msg = pool.messages[0].message.conversation;
+    info.id = pool.messages[0].?key?.remoteJid;
+    info.msg = pool.messages[0]?.message?.conversation;
     return info;
 }
 
