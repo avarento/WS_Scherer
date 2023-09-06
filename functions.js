@@ -23,7 +23,6 @@ async function pesquisaScherer(scherer) {
     const { data } = await axios.get(URL, { httpsAgent });
     const dom = new JSDOM(data);
     const { document } = dom.window
-    console.log("document: ", document)
     const pesquisa = {};
     pesquisa.codigo = document.querySelector("div> div > div > div > div > p.m-t-20")?.lastChild?.textContent.trim();
     pesquisa.descricao = document.querySelector("div > div > div > div > div > p.m-t-5")?.textContent
@@ -35,19 +34,19 @@ async function pesquisaScherer(scherer) {
 
     if (pesquisa.updown === "up" && pesquisa.descricao !== undefined) {
         pesquisa.status = "válido";
-        console.log(pesquisa) 
+         
         return pesquisa;
     } else if (pesquisa.updown === "up" && pesquisa.descricao === undefined) {
         pesquisa.status = "inválido";
-        console.log(pesquisa) 
+       
         return pesquisa;
     } else if (pesquisa.updown === "down") {
         pesquisa.status = pesquisa.updown;
-        console.log(pesquisa) 
+       
         return pesquisa;
     } else {
         pesquisa.status = "error";
-        console.log(pesquisa) 
+ 
         return pesquisa;
     }        
 
@@ -69,7 +68,6 @@ async function get_img_url(url) {
     });
      
         const buffer = Buffer.from(response.data, 'base64');
-        console.log(buffer)
         return buffer;
    
 }
