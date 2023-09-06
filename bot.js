@@ -9,10 +9,10 @@ async function start_bot() {
 
 
     waSocket.ev.on('messages.upsert', async pool => {
-        console.log(pool.messages[0])
+        
 
         let info = await extract(pool);
-
+        console.log(info)
        
         if (info.msg.startsWith("#") && IaN(info.msg.replace("#", "")) === true) {
             pesquisaScherer(info.msg.replace("#", "")).then(async (pesquisa) => {
