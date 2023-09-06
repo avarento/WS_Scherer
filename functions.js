@@ -10,7 +10,7 @@ const { JSDOM } = jsdom;
 //Configuração manual para o Axios aceitar o certificado de segurança do site da Scherer via Https Agent. 
 const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
-    cert: fs.readFileSync('../cert'),
+    cert: fs.readFileSync('./cert'),
 });
 
 function IaN(string) {
