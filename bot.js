@@ -21,7 +21,7 @@ async function start_bot() {
                 if (pesquisa.status === "válido") {
                     const img = await get_img_url(pesquisa.imgURL);
                     let mensagem = `*_Cod Scherer:_* ${pesquisa.scherer} \n\n*_Código da peça:_* ${pesquisa.codigo} \n\n*_Descrição:_* ${pesquisa.descricao} 
-                            \n\n*Deseja requisitar esta peça?*\n*(S, N, F, M)*`
+                            \n\n`
                     await waSocket.sendMessage(info.id, {image: img, caption: mensagem})
 
                 } else if (pesquisa.status === "inválido") {
