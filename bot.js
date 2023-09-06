@@ -16,7 +16,7 @@ async function start_bot() {
        
         if (info.msg.startsWith("#") && IaN(info.msg.replace("#", "")) === true) {
             pesquisaScherer(info.msg.replace("#", "")).then(async (pesquisa) => {
-                console.log(pesquisa)
+                console.log("Scherer: ", pesquisa.scherer, "Status: ", pesquisa.status)
 
                 if (pesquisa.status === "válido") {
                     const img = await get_img_url(pesquisa.imgURL);
