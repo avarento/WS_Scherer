@@ -34,20 +34,16 @@ async function pesquisaScherer(scherer) {
 
     if (pesquisa.updown === "up" && pesquisa.descricao !== undefined) {
         pesquisa.status = "válido";
-         
         return pesquisa;
     } else if (pesquisa.updown === "up" && pesquisa.descricao === undefined) {
         pesquisa.status = "inválido";
-       
         return pesquisa;
     } else if (pesquisa.updown === "down") {
         pesquisa.status = pesquisa.updown;
-       
         return pesquisa;
     } else {
         pesquisa.status = "error";
- 
-        return pesquisa;
+         return pesquisa;
     }        
 
 
