@@ -9,7 +9,6 @@ async function connect() {
         browser: Browsers.macOS('Desktop'),
         syncFullHistory: false,
         auth: state,
-        keepAliveIntervalMs: 5000
     });
 
     waSocket.ev.on('connection.update', (update) => {
