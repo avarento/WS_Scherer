@@ -8,7 +8,8 @@ async function connect() {
         printQRInTerminal: true,
         browser: Browsers.macOS('Desktop'),
         syncFullHistory: false,
-        auth: state
+        auth: state,
+        keepAliveIntervalMs: 5000
     });
 
     waSocket.ev.on('connection.update', (update) => {
