@@ -4,9 +4,7 @@ const { default:  MessageType, MessageOptions, Mimetype, makeWASocket, Browsers,
 async function connect() {
     const { state, saveCreds } = await useMultiFileAuthState(`wpp_auth`)
     const waSocket = makeWASocket({
-        version: [2,2323,4],
         printQRInTerminal: true,
-        browser: Browsers.macOS('Desktop'),
         syncFullHistory: false,
         auth: state,
     });
